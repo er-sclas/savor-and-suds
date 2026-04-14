@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango Nectar — SAVOR & SUDS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;500;700;900&family=Inter:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f4f4f4; scroll-behavior: smooth; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .marquee { display: flex; width: max-content; animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .ticker { display: flex; width: max-content; animation: ticker 60s linear infinite; }
+        @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .glow { text-shadow: 0 0 60px rgba(255,255,255,0.08); }
+        .link-underline { position: relative; }
+        .link-underline::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: currentColor; transition: width 0.5s ease; }
+        .link-underline:hover::after { width: 100%; }
+        nav.site-nav { transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, border-color 0.4s ease; }
+        nav.site-nav.scrolled {
+            background: rgba(10, 10, 10, 0.82);
+            backdrop-filter: saturate(180%) blur(18px);
+            -webkit-backdrop-filter: saturate(180%) blur(18px);
+            mix-blend-mode: normal !important;
+            border-bottom: 1px solid rgba(39,39,42,0.7);
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .accent { color: #e4a74a; }
+        .card-hover img { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+        .card-hover:hover img { transform: scale(1.04); }
+        .qty-btn:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- TICKER -->
+    <div class="bg-black border-b border-zinc-900 overflow-hidden py-3">
+        <div class="ticker text-[10px] uppercase tracking-[0.4em] text-zinc-500 mono">
+            <div class="flex gap-10 md:gap-16 px-8 whitespace-nowrap">
+                <span>Drop 001 — Available Now</span><span>✦</span>
+                <span>Free Carbon-Neutral Shipping Above ₹14,999</span><span>✦</span>
+                <span>Limited to 2,400 Bars Per Flavor</span><span>✦</span>
+                <span>As Featured in Monocle, Wallpaper*, Kinfolk</span><span>✦</span>
+                <span>Bespoke Engraving Available</span><span>✦</span>
+            </div>
+            <div class="flex gap-10 md:gap-16 px-8 whitespace-nowrap">
+                <span>Drop 001 — Available Now</span><span>✦</span>
+                <span>Free Carbon-Neutral Shipping Above ₹14,999</span><span>✦</span>
+                <span>Limited to 2,400 Bars Per Flavor</span><span>✦</span>
+                <span>As Featured in Monocle, Wallpaper*, Kinfolk</span><span>✦</span>
+                <span>Bespoke Engraving Available</span><span>✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="site-nav fixed w-full z-50 flex justify-between items-center px-5 md:px-12 lg:px-16 py-6 md:py-8 mix-blend-difference">
+        <div class="flex items-center gap-4 md:gap-6 min-w-0">
+            <a href="index.html" class="nav-logo text-2xl md:text-4xl font-black tracking-tighter uppercase glow shrink-0">S&S</a>
+            <div class="hidden lg:block text-[9px] uppercase tracking-[0.3em] text-zinc-400 border-l border-zinc-700 pl-6 whitespace-nowrap">Est. 2026 / Chennai</div>
+        </div>
+        <div class="hidden md:flex space-x-8 lg:space-x-14 text-[10px] uppercase tracking-[0.3em]">
+            <a href="index.html#philosophy" class="link-underline">Philosophy</a>
+            <a href="index.html#flavors" class="link-underline">Collection</a>
+            <a href="index.html#process" class="link-underline">Atelier</a>
+            <a href="index.html#ritual" class="link-underline">Ritual</a>
+            <a href="index.html#press" class="link-underline">Press</a>
+        </div>
+        <div class="flex items-center gap-4 md:gap-6 shrink-0">
+            <div class="hidden md:block text-[10px] uppercase tracking-widest">EN / ₹</div>
+            <div class="text-[10px] uppercase tracking-widest border-b border-white pb-1 cursor-pointer">Bag <span class="mono opacity-50">(0)</span></div>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="pt-28 md:pt-32 px-5 md:px-12 lg:px-20 border-b border-zinc-900 pb-5 md:pb-6">
+        <div class="max-w-[1600px] mx-auto flex items-center gap-3 mono text-[10px] uppercase tracking-[0.3em] text-zinc-500 overflow-x-auto whitespace-nowrap">
+            <a href="index.html" class="hover:text-white transition">S&S</a>
+            <span>/</span>
+            <a href="index.html#flavors" class="hover:text-white transition">Collection</a>
+            <span>/</span>
+            <span class="text-white">Mango Nectar</span>
+        </div>
+    </div>
+
+    <!-- PRODUCT HERO -->
+    <section class="px-5 md:px-12 lg:px-20 py-10 md:py-20 border-b border-zinc-900">
+        <div class="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20">
+
+            <!-- IMAGE GALLERY -->
+            <div class="lg:col-span-7">
+                <div class="aspect-[4/5] bg-zinc-900 border border-zinc-800 overflow-hidden relative mb-4">
+                    <img id="mainImage" src="mango.jpeg" alt="Mango Nectar" class="w-full h-full object-cover">
+                    <div class="absolute top-5 left-5 mono text-[9px] tracking-[0.3em] uppercase text-zinc-400">Bar N° 01 / ℞ M-001</div>
+                    <div class="absolute top-5 right-5 bg-black/70 backdrop-blur px-3 py-1 mono text-[9px] uppercase tracking-widest">In Stock</div>
+                    <div class="absolute bottom-5 right-5 accent mono text-[9px] tracking-[0.3em] uppercase">◆ Alphonso Cultivar</div>
+                </div>
+                <div class="grid grid-cols-4 gap-3 md:gap-4">
+                    <div class="aspect-square bg-zinc-900 border border-zinc-700 overflow-hidden cursor-pointer card-hover">
+                        <img src="mango.jpeg" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-zinc-900 border border-zinc-800 overflow-hidden cursor-pointer card-hover opacity-50 hover:opacity-100 transition">
+                        <img src="mango.jpeg" alt="" class="w-full h-full object-cover scale-150">
+                    </div>
+                    <div class="aspect-square bg-zinc-900 border border-zinc-800 flex items-center justify-center mono text-[9px] uppercase tracking-widest text-zinc-600">Angle 03</div>
+                    <div class="aspect-square bg-zinc-900 border border-zinc-800 flex items-center justify-center mono text-[9px] uppercase tracking-widest text-zinc-600">Macro</div>
+                </div>
+            </div>
+
+            <!-- INFO PANEL -->
+            <div class="lg:col-span-5">
+                <p class="mono text-[10px] tracking-[0.3em] uppercase accent mb-6">Drop 001 — Bar N° 01</p>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic leading-[0.95] mb-6 md:mb-8 glow">
+                    Mango <br><span class="not-italic font-black">Nectar.</span>
+                </h1>
+                <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8">
+                    The sweetest expression in the house. Pressed at peak ripeness from single-estate Ratnagiri Alphonso — a bar you may bite without regret and wash with without worry.
+                </p>
+
+                <div class="flex items-baseline gap-4 mb-8 md:mb-10 pb-8 md:pb-10 border-b border-zinc-800">
+                    <span class="serif italic text-4xl md:text-5xl">₹5,499</span>
+                    <span class="mono text-[10px] uppercase tracking-widest text-zinc-500">/ 130g bar</span>
+                </div>
+
+                <!-- NOTES -->
+                <div class="mb-8 md:mb-10">
+                    <p class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 mb-4">Tasting Notes</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 border border-zinc-700 text-xs italic serif">Alphonso</span>
+                        <span class="px-4 py-2 border border-zinc-700 text-xs italic serif">Citric Acid</span>
+                        <span class="px-4 py-2 border border-zinc-700 text-xs italic serif">Acacia Honey</span>
+                        <span class="px-4 py-2 border border-zinc-700 text-xs italic serif">Pink Salt</span>
+                    </div>
+                </div>
+
+                <!-- PROFILE GRID -->
+                <div class="grid grid-cols-3 gap-4 pb-8 md:pb-10 border-b border-zinc-800 mb-8 md:mb-10">
+                    <div><p class="mono text-[8px] tracking-widest uppercase text-zinc-600 mb-2">Profile</p><p class="italic serif text-lg">Sweet</p></div>
+                    <div><p class="mono text-[8px] tracking-widest uppercase text-zinc-600 mb-2">Intensity</p><p class="italic serif text-lg">Medium</p></div>
+                    <div><p class="mono text-[8px] tracking-widest uppercase text-zinc-600 mb-2">Lather</p><p class="italic serif text-lg">Dense</p></div>
+                </div>
+
+                <!-- QTY + CTA -->
+                <div class="mb-5">
+                    <p class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 mb-4">Quantity</p>
+                    <div class="inline-flex items-center border border-zinc-700 mb-6">
+                        <button class="qty-btn w-12 h-12 text-lg transition">−</button>
+                        <span class="w-14 text-center serif italic text-xl">1</span>
+                        <button class="qty-btn w-12 h-12 text-lg transition">+</button>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-8 md:mb-10">
+                    <button class="w-full py-5 bg-white text-black hover:bg-zinc-200 transition-all duration-500 text-[10px] uppercase tracking-[0.3em] font-medium">Add to Bag — ₹5,499</button>
+                    <button class="w-full py-5 border border-zinc-700 hover:border-white transition-all duration-500 text-[10px] uppercase tracking-[0.3em]">Subscribe · Every 6 Weeks · −10%</button>
+                </div>
+
+                <!-- SHIPPING BLURB -->
+                <div class="grid grid-cols-2 gap-4 text-[11px] text-zinc-500 leading-relaxed">
+                    <div class="border-t border-zinc-800 pt-4">
+                        <p class="mono uppercase tracking-widest text-zinc-400 mb-2">Ships in 2–4 days</p>
+                        <p>Carbon-neutral, hand-packed.</p>
+                    </div>
+                    <div class="border-t border-zinc-800 pt-4">
+                        <p class="mono uppercase tracking-widest text-zinc-400 mb-2">Engravable</p>
+                        <p>Add monogram at checkout. +₹599.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY STRIP -->
+    <section class="bg-white text-black py-8 md:py-10 overflow-hidden border-b border-zinc-200">
+        <div class="marquee">
+            <div class="flex items-center gap-10 md:gap-16 px-6 md:px-8 whitespace-nowrap text-4xl md:text-8xl italic serif font-light">
+                <span>Ratnagiri.</span><span class="opacity-30">✦</span>
+                <span>Alphonso.</span><span class="opacity-30">✦</span>
+                <span>Peak Ripeness.</span><span class="opacity-30">✦</span>
+                <span>Sun-Pressed.</span><span class="opacity-30">✦</span>
+            </div>
+            <div class="flex items-center gap-10 md:gap-16 px-6 md:px-8 whitespace-nowrap text-4xl md:text-8xl italic serif font-light">
+                <span>Ratnagiri.</span><span class="opacity-30">✦</span>
+                <span>Alphonso.</span><span class="opacity-30">✦</span>
+                <span>Peak Ripeness.</span><span class="opacity-30">✦</span>
+                <span>Sun-Pressed.</span><span class="opacity-30">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="py-24 md:py-40 px-5 md:px-12 lg:px-20 bg-black border-b border-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-4 md:gap-6 mb-10 md:mb-16">
+                <span class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 whitespace-nowrap">§ The Story</span>
+                <div class="h-px flex-1 bg-zinc-800"></div>
+                <span class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 whitespace-nowrap">M-001</span>
+            </div>
+            <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl italic leading-[0.95] mb-10 md:mb-14">
+                A <span class="not-italic font-black">six-week</span> ripeness <br>window. <span class="accent">One bar.</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+                <p class="text-lg md:text-xl text-zinc-300 leading-relaxed font-light">
+                    Every spring, a narrow corridor on the Konkan coast yields what connoisseurs call the King of Mangoes. Alphonso — saffron-fleshed, almost buttery, impossible to replicate under greenhouse conditions.
+                </p>
+                <p class="text-base md:text-lg text-zinc-500 leading-relaxed">
+                    We source from a cooperative of four growers in Ratnagiri, press the fruit within 48 hours of harvest, and fold the resulting nectar into our saponin base before the flavor can flatten. The bar holds for two years. The fruit, otherwise, holds for nine days.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TASTING JOURNEY -->
+    <section class="py-24 md:py-40 px-5 md:px-12 lg:px-20 bg-[#111] border-b border-zinc-900">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="flex items-center gap-4 md:gap-6 mb-10 md:mb-16">
+                <span class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 whitespace-nowrap">§ The Tasting Journey</span>
+                <div class="h-px flex-1 bg-zinc-800"></div>
+                <span class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 whitespace-nowrap">Three Stages</span>
+            </div>
+
+            <h2 class="text-4xl sm:text-5xl md:text-7xl italic leading-none mb-14 md:mb-20">
+                From tongue. To skin. <br><span class="not-italic font-black">To rinse.</span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-px bg-zinc-800">
+                <div class="bg-[#111] p-8 md:p-12">
+                    <p class="serif italic text-6xl md:text-7xl accent mb-8">i.</p>
+                    <p class="mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 mb-4">First Taste</p>
+                    <h3 class="text-2xl md:text-3xl italic mb-5">Tropical.<br>Bright.<br>Honeyed.</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">A single grain on the tongue reads as sun-warmed Alphonso, trailing into soft acidity. The pink salt arrives last, a clean, mineral floor.</p>
+                </div>
+                <div class="bg-[#111] p-8 md:p-12">
+                    <p class="serif italic text-6xl md:text-7xl accent mb-8">ii.</p>
+                    <p class="mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 mb-4">On Skin</p>
+                    <h3 class="text-2xl md:text-3xl italic mb-5">Dense.<br>Viscous.<br>Slow.</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">The lather builds with unusual weight — almost fruit-pulp-like. Works the skin as a warm compress. The honey lends a faint perfume that lingers past the rinse.</p>
+                </div>
+                <div class="bg-[#111] p-8 md:p-12">
+                    <p class="serif italic text-6xl md:text-7xl accent mb-8">iii.</p>
+                    <p class="mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 mb-4">After Rinse</p>
+                    <h3 class="text-2xl md:text-3xl italic mb-5">Soft.<br>Floral.<br>Balanced.</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Skin reads as hydrated, pH-neutral, with a trace of mango sillage that fades within twenty minutes. Not perfume. A memory of fruit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section class="py-24 md:py-40 px-5 md:px-12 lg:px-20 bg-black border-b border-zinc-900">
+        <div class="max-w-[1600px] mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+            <div>
+                <p class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 mb-6">§ Formulation — M-001</p>
+                <h2 class="text-4xl sm:text-5xl md:text-7xl italic leading-[0.95] mb-8">
+                    What <span class="accent">M-001</span> <br>is made of.
+                </h2>
+                <p class="text-zinc-400 leading-relaxed max-w-md mb-8">
+                    A declaration, ingredient by ingredient. Every line is food-grade, certified, traceable to its source. No asterisks, no "natural flavor," no hidden proprietary stacks.
+                </p>
+                <a href="#" class="inline-block mono text-[10px] uppercase tracking-widest border-b border-zinc-600 hover:border-white transition pb-1">Download the Full Certificate →</a>
+            </div>
+            <div class="space-y-0 border-t border-zinc-800">
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Alphonso mango purée</span>
+                    <span class="serif italic accent">14%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Saponified coconut oil</span>
+                    <span class="serif italic">32%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Shea butter (unrefined)</span>
+                    <span class="serif italic">20%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Quillaja saponaria extract</span>
+                    <span class="serif italic">14%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Acacia honey</span>
+                    <span class="serif italic accent">4%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Filtered alpine water</span>
+                    <span class="serif italic">10%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Himalayan pink salt</span>
+                    <span class="serif italic">1%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Food-grade citric acid</span>
+                    <span class="serif italic">0.5%</span>
+                </div>
+                <div class="flex justify-between py-4 md:py-5 border-b border-zinc-800 gap-4">
+                    <span class="mono text-[11px] md:text-xs uppercase tracking-widest text-zinc-400">Synthetic additives</span>
+                    <span class="serif italic">0%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUGGESTED RITUAL -->
+    <section class="py-24 md:py-40 px-5 md:px-12 lg:px-20 bg-[#111] border-b border-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <p class="mono text-[10px] tracking-[0.3em] uppercase text-zinc-500 mb-6">§ Suggested Ritual</p>
+            <h2 class="text-4xl sm:text-5xl md:text-7xl italic leading-[0.95] mb-10 md:mb-14">
+                Morning. <span class="accent">Warm water.</span> <br>An empty stomach.
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+                <p class="text-lg md:text-xl text-zinc-300 leading-relaxed font-light">
+                    Mango Nectar is our designated morning bar. The sugar in the Alphonso registers more intensely on a rested palate. Taste first — a small grain on the tongue, eyes closed.
+                </p>
+                <p class="text-base md:text-lg text-zinc-500 leading-relaxed">
+                    Then lather with warm (never hot) water. The bar will grip; do not scrub. Circle the forearms first, then the chest, then the face. Five minutes. Exit. Pat dry. The perfume holds for twenty minutes — long enough to dress.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="py-24 md:py-40 px-5 md:px-12 lg:px-20 bg-black border-b border-zinc-900">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+                <h2 class="text-4xl sm:text-5xl md:text-7xl italic leading-none">
+                    The <span class="not-italic font-black">other</span> two.
+                </h2>
+                <a href="index.html#flavors" class="mono text-[10px] uppercase tracking-widest border-b border-zinc-600 hover:border-white transition pb-1 self-start md:self-end">View Full Collection →</a>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-10 md:gap-12">
+                <a href="noir-cacao.html" class="card-hover block cursor-pointer group">
+                    <div class="aspect-[3/4] bg-zinc-900 border border-zinc-800 overflow-hidden mb-6 relative">
+                        <img src="choco.jpeg" alt="Noir Cacao" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 mono text-[9px] tracking-[0.3em] uppercase text-zinc-300">Bar N° 02</div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl italic mb-2">Noir Cacao</h3>
+                            <p class="text-xs text-zinc-500 mono uppercase tracking-widest">Bitter · High · Gritty</p>
+                        </div>
+                        <span class="serif italic text-xl md:text-2xl text-zinc-400">₹6,299</span>
+                    </div>
+                </a>
+                <a href="velvet-creme.html" class="card-hover block cursor-pointer group">
+                    <div class="aspect-[3/4] bg-zinc-900 border border-zinc-800 overflow-hidden mb-6 relative">
+                        <img src="velvet.jpeg" alt="Velvet Crème" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 mono text-[9px] tracking-[0.3em] uppercase text-zinc-300">Bar N° 03</div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl italic mb-2">Velvet Crème</h3>
+                            <p class="text-xs text-zinc-500 mono uppercase tracking-widest">Creamy · Low · Silken</p>
+                        </div>
+                        <span class="serif italic text-xl md:text-2xl text-zinc-400">₹5,799</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black pt-20 md:pt-24 pb-10 px-5 md:px-12 lg:px-20">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="grid md:grid-cols-12 gap-10 md:gap-12 pb-14 md:pb-16 border-b border-zinc-900">
+                <div class="md:col-span-5">
+                    <div class="text-5xl md:text-8xl font-black tracking-tighter mb-6 md:mb-8 glow">S&S</div>
+                    <p class="text-zinc-400 max-w-sm leading-relaxed">
+                        Savor & Suds is an edible hygiene house. Founded in Chennai, 2026. We make three bars of soap. We intend to make them well.
+                    </p>
+                </div>
+                <div class="md:col-span-2">
+                    <p class="mono text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-5 md:mb-6">Shop</p>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="mango-nectar.html" class="link-underline text-zinc-300">Mango Nectar</a></li>
+                        <li><a href="noir-cacao.html" class="link-underline text-zinc-300">Noir Cacao</a></li>
+                        <li><a href="velvet-creme.html" class="link-underline text-zinc-300">Velvet Crème</a></li>
+                        <li><a href="#" class="link-underline text-zinc-300">The Triptych</a></li>
+                        <li><a href="#" class="link-underline text-zinc-300">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <p class="mono text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-5 md:mb-6">House</p>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html#philosophy" class="link-underline text-zinc-300">Manifesto</a></li>
+                        <li><a href="index.html#process" class="link-underline text-zinc-300">The Atelier</a></li>
+                        <li><a href="#" class="link-underline text-zinc-300">Journal</a></li>
+                        <li><a href="index.html#press" class="link-underline text-zinc-300">Press</a></li>
+                        <li><a href="#" class="link-underline text-zinc-300">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <p class="mono text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-5 md:mb-6">Contact</p>
+                    <ul class="space-y-3 text-sm text-zinc-300">
+                        <li>Chennai</li>
+                        <li class="pt-4"><a href="#" class="link-underline">hello@savorsuds.co</a></li>
+                        <li><a href="#" class="link-underline">+91 44 4224 0000</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8">
+                <p class="mono text-[9px] uppercase tracking-[0.3em] text-zinc-600 text-center md:text-left">&copy; 2026 Savor &amp; Suds Pvt Ltd / All Rights Reserved</p>
+                <div class="flex flex-wrap justify-center gap-5 md:gap-8 mono text-[9px] uppercase tracking-[0.3em] text-zinc-600">
+                    <a href="#" class="hover:text-white transition">Instagram</a>
+                    <a href="#" class="hover:text-white transition">Are.na</a>
+                    <a href="#" class="hover:text-white transition">Pinterest</a>
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+            <div class="mt-10 text-center">
+                <p class="mono text-[10px] uppercase tracking-[0.4em] text-zinc-500">Created with <span class="serif italic lowercase tracking-normal text-zinc-300">love</span> by Mohamed Raahil</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const nav = document.querySelector('nav.site-nav');
+            if (!nav) return;
+            const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
+</body>
+</html>
